@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-01</title>
+</head>
+
+<body>
+    <h1>Welcome To My Page</h1>
+
+    <label>name:</label> <input id="user-name" type="text" placeholder="Enter your name">
+    <button onclick="greet()">submit</button>
+
+    <script>
+        // greets the user by reading name from input and logging it to console
+        function greet() {
+            let nameInputBox = document.getElementById("user-name");
+            console.log(`Welcome, ${nameInputBox.value}`);
+            nameInputBox.value = "";
+        }
+    </script>
+</body>
+
+</html>
