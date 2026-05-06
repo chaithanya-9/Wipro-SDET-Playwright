@@ -103,9 +103,3 @@ console.log(`after arr.splice(1, 1): ${arr}`);
 console.log(arr.indexOf(50)); // returns index of first match, -1 if not found
 console.log(arr.includes(100)); // checks if value exists, returns true or false
 console.log(arr.length); // returns length of an array
-
-
-
-
-
-
