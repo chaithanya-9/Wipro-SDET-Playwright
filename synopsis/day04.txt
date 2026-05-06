@@ -1,0 +1,29 @@
+Day-04
+
+Synchronous program:
+    -> code executes in a sequential order (line by line), next line waits for the current line to finish execution before running
+    -> disadvantage is if one block/line takes more time to finish then all the after blocks/lines will wait so its not efficient
+
+To solve this we have 3 ways:
+    1-> callbacks: its a function that runs after something finishes, callbacks can be any type of functions(generic function,arrow function, etc)
+    this way will be hectic to debug or to understand if we have multiple callbacks and this is called callback hell
+    
+    => setTimeout(callback, time) -> will execute the callback function once after a specific delay
+
+    => setInterval(callback, time) -> will execute the callback function repeatedly every specific interval until it stopped
+
+    => clearInterval(setInterval) -> stops a setInterval from running, we should store the interval in a variable first to clear it
+    
+    2-> Promise: an object in js which introduced to solve callback hell and it represents a value that will be available in future
+        there are 3 states in Promise
+            Pending -> initial state
+            Resolve -> operation successfull then promise holds result value
+            Reject -> operation failure then promise holds error message
+    
+    calling api and modifying its data
+        fetch("https://jsonplaceholder.typicode.com/todos")
+            .then((res) => { return res.json() })
+            .then((data) => { return data.filter((d) => { return (d.id % 100) === 0 }) })
+            .then((data) => { return data.map((d) => { d.title = "Ojas " + d.title; return d }) })
+            .then((data) => { console.log(data) })
+            .catch((e) => { console.log(e) })

@@ -1,0 +1,58 @@
+Day-01
+
+Arithmatic Operators:
+    ->  '+' will add two numbers and if oneside is string then it concatinates.
+    -> '-' will subtract right variable's value from left variable's value.
+    -> '*' will multiply variables values.
+    -> '/' will divide left variable's value by right variable's value.
+    -> '%' will return remainder after divisiion.
+    -> '**' will raises left variable's value to the power of right variable's value.
+
+Logical and Comparison Operators:
+    -> '>' checks if left value is greater than right value.
+    -> '<' checks if left value is less than right value.
+    -> '==' checks if two values are equal (value only).
+    -> '===' checks if two values are equal in both value and datatype.
+    -> '!=' checks if two values are not equal.
+    -> '&&' returns true only if all conditions are true.
+    -> '||' returns true if at least one condition is true.
+    -> '!' flips the boolean value, true becomes false and false becomes true.
+
+String Functions:
+    -> '.length' returns the total number of characters in the string.
+    -> '.toUpperCase()' converts the entire string to upper case.
+    -> '.toLowerCase()' converts the entire string to lower case.
+    -> '.substring(start, end)' extracts characters from start index up to but not including end index.
+    -> '.trim()' removes whitespace from both ends of the string.
+    -> '.includes()' checks if a string contains a specific value and returns true or false.
+    -> '.indexOf()' returns the index of the first match, returns -1 if not found.
+    -> '.charAt()' returns the character at a specific index.
+
+Arrays:
+    -> An array stores multiple values in a single variable accessed by index starting from 0. Unlike other languages JavaScript
+        arrays can hold mixed data types like numbers, strings, booleans and decimals together in the same array.
+    -> 'arr[index]' accesses a value at a specific index.
+    -> 'arr[arr.length - 1]' accesses the last element of the array.
+
+For Loop:
+    -> A for loop executes a block of code a specific number of times based on a condition. 
+    -> It has three parts — initialization sets the starting value, condition is checked before each iteration and stops the loop when false, increment runs after
+        each iteration.
+
+While Loop:
+    -> A while loop executes a block of code repeatedly as long as the condition is true. 
+    -> The condition is checked before each iteration and if it is false from the start the loop never runs.
+    -> Used when we do not know the number of iterations in advance.
+
+Conditional Statements:
+if/else:
+    -> Checks a condition and runs the if block if it is true, otherwise runs the else block.
+
+if/else-if/else:
+    -> Used when there are multiple conditions to check.
+    -> Checks each condition one by one from top to bottom and runs the first block that is true. If none match the else block runs.
+
+switch case:
+    -> Used when a single variable needs to be checked against multiple fixed values. 
+    -> Each case matches one value and break stops it from falling into the next case. 
+    -> default runs if none of the cases match, similar to the else block.
