@@ -1,0 +1,27 @@
+parse json into string 
+    -> we use JSON's method called stringify() to parse from JSON to string 
+
+parse string to JSON
+    -> we use JSON's method called parse() to parse from string to JSON
+
+ASYNC 
+    -> we mention async keyword infront of a function to make it work asynchronously
+    -> taht function always returns Promise
+
+AWAIT 
+    -> it should be used only in a async function
+    -> it will wait and pauses the execution until the promise to resolve 
+
+OOPS 
+    -> object oriented programing which makes code to be organised and more readable
+
+Four pillers of OOPS:
+    -> Encapsulation
+        => securing the internal structure wihtout giving direct access it gives controlled access by using access modifiers
+    -> Inheritence
+        => we can create classes which can extends from another class using extends keyword
+        => so child class can inherite properties/methods from parent class
+    -> Polymorphism
+        => one thing having many forms, like one method from one class can be having different behaviours for each class
+    -> Abstraction
+        => hiding the complex internal implementation and showing what is neccesary
