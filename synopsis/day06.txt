@@ -1,0 +1,20 @@
+Generally the objects would get thier own copies of functions. but this leads to more memory usage as same function copy is created several times whenever the object is created. and this lead to ineffitient usage of memory.
+So to use the memory effitiently we use something called as "prototype".
+
+Prototype:
+    -> it is used to generate a single copy of a function and all the objects will use the same copy.
+    -> this makes the memory usage effitient.
+
+    without prototype:
+        obj-1 -> copy-1
+        obj-2 -> copy-2
+        obj-3 -> copy-3
+    
+    with prototype:
+        obj-1 -----
+                   |
+                  \/
+        obj-2 --> copy
+                  /\
+                   |
+        obj-3 -----
