@@ -18,3 +18,18 @@ Prototype:
                   /\
                    |
         obj-3 -----
+
+callback function
+    -> a function which has been called by a function
+higher order function
+    -> a function which calls a callback function
+
+stack : 
+    ->it stores data in last in first out order (LIFO)
+    -> premitive types will be stored in stack and it fetches fastly 
+    -> primitive copy
+
+heap: 
+    -> it stores objects like funtions, arrays and in random order and its fetches slowly compared to stack
+    -> refrence copy
+ 
