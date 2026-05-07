@@ -28,12 +28,15 @@ const cart = [
 ];
 
 
+// isEligible function validates if item belongs to Electronics and price is greate rthan 200
 function isEligible(category, price) {
     return ((category === "Electronics" && price > 200)) ? true : false;
 }
 
 function applyPromo(cart, promoCallback) {
+    // create totalPriceBeforeDiscount variable and add all the prices to use to get tottal savings at the end
     let totalPriceBeforeDiscount = 0;
+    // traversing into each value of cart array and if value belongs to electronics and price is greaterthan 200 then give discount of 10% and add isDiscounted property to the object and value is true or else give no discount and put value of false to isDidscounted property 
     cart.forEach((d) => {
         if (promoCallback(d.category, d.price)) {
             totalPriceBeforeDiscount += d.price;
@@ -43,6 +46,7 @@ function applyPromo(cart, promoCallback) {
             d.isDiscounted = false;
         }
     })
+    // use reduce() to calculate items got discount
     let totalDiscountedItems = cart.reduce((acc, curr) => { return curr.isDiscounted ? acc + 1 : acc; }, 0);
     let totalDistcountedItemsCost = cart.reduce((acc, curr) => { return curr.isDiscounted ? acc + curr.price : acc }, 0)
 
@@ -51,6 +55,7 @@ function applyPromo(cart, promoCallback) {
 
 applyPromo(cart, isEligible);
 
+// setTimeout prints result after the delay of 1000 milliseconds 
 setTimeout(() => {
     console.log(cart);
 }, 1000)

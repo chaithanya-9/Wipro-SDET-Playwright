@@ -26,19 +26,23 @@ const rawMovies = [
     "Gladiator|Action|4500"
 ];
 
+// // create movies array and used forEach to traverser rawMovies array and split each index value based on "|" this character and split method returns array and push that array into movies
 const movies = [];
 rawMovies.forEach((d) => {
     return movies.push(d.split("|"));
 })
 
+// moviesObject stores array of objects which return from movies.map() after validating views as number and if not number insert 0
 const moviesObject = movies.map((d) => {
     return { name: d[0], genre: d[1], views: Number(d[2]) || 0 }
 })
 
+// moviesObject.filter filters based on genre as Action or Sci-Fi and views having more than 5000 
 const newList = moviesObject.filter((d) => {
     return (d.genre === "Action" || d.genre === "Sci-Fi") && d.views > 5000;
 })
 
+//sorted in descing order based on views 
 const sortedNewList = newList.toSorted((a, b) => b.views - a.views);
 
 console.log(JSON.stringify(sortedNewList));

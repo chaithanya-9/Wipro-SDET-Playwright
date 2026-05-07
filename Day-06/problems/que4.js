@@ -21,29 +21,32 @@ const employees = [
     { id: 103, name: "Charlie", salary: 5200 }
 ];
 
+// validate if salary is greater than 5000, tax is 20% or else 10%
 function taxLogic(salary) {
     return salary > 5000 ? 20 : 10;
 }
 
 function calculatePayroll(employees, taxCallback) {
+    // check for salary and add netSalary property to the employee object to differentiate original salary 
     employees.forEach((d) => {
         if (taxCallback(d.salary) === 20) {
-            d.salary -= (d.salary * 0.2);
+            d.netSalary = d.salary - (d.salary * 0.2);
         } else {
-            d.salary -= (d.salary * 0.1);
+            d.netSalary = d.salary - (d.salary * 0.1);
         }
-
-        if ((d.salary) > 4000) {
+        // add status property and put premium if netsalary is greater than 4000 or else standard
+        if ((d.netSalary) > 4000) {
             d.status = "Premium";
         } else {
             d.status = "Standard";
         }
     })
-
-    let totalNetSalary = employees.reduce((acc, curr) => { return acc + curr.salary }, 0);
+    // calculate total net salary using reduce()
+    let totalNetSalary = employees.reduce((acc, curr) => { return acc + curr.netSalary }, 0);
 
     console.log(`Payroll Processed: Total Net Payout is $${totalNetSalary} for ${employees.length} employees.`);
 
+    // return updated employees array after 2000 milli seconds
     setTimeout(() => {
         console.log(employees);
     }, 2000);
