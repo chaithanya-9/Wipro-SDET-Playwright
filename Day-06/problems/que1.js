@@ -43,7 +43,7 @@ const flightsObject = flights.map((d) => {
 //flightObject.filter() returns objects whose price is between 100 and 500 and store in newFlights
 const newFlights = flightsObject.filter((d) => { return d.price >= 100 && d.price <= 500 });
 
-//newFlights is sorted in oascending order based on its price
+//newFlights is sorted in oascending order based on its price and used toSorted() method instead of sort() because i dont want newFlights array to get changed as sort() method modifies newFlights array
 const sortedFlights = newFlights.toSorted((a, b) => a.price - b.price);
 
 // return final array as json string

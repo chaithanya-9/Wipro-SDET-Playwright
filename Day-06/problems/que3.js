@@ -42,7 +42,7 @@ const newList = moviesObject.filter((d) => {
     return (d.genre === "Action" || d.genre === "Sci-Fi") && d.views > 5000;
 })
 
-//sorted in descing order based on views 
+//sorted in descing order based on views  and used toSorted() method instead of sort() because i dont want newList array to get changed as sort() method modifies it
 const sortedNewList = newList.toSorted((a, b) => b.views - a.views);
 
 console.log(JSON.stringify(sortedNewList));
