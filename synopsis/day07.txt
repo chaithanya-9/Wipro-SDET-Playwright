@@ -1,0 +1,15 @@
+Hoisting: 
+    -> it is a js behaviour of moving variable declaration to the top of its scope before the code runs
+
+var:
+    ->var will be hoisted and its decalration var num=undefined; is moved to the top and initialisation num=10; 
+    -> it will be stayed there as before so whenever we try to access var num even before its written then it will print undefined without throwing error
+
+let/const:
+    -> but for let and const its different like let and const will be hoisted but not initialise as undefined 
+    -> so it stays in temporal dead zone from the top of its scope until the declaration line
+
+function:
+    -> function will be hoisted with its body 
+    -> but arrow function will work different as we store that function in variable so it follows that variable's hoisting rules
+
