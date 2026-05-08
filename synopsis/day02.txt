@@ -1,0 +1,66 @@
+Template Literals:
+    -> it is better way to print output in console
+    -> use backticks `` and to mention value use ${}
+
+functions:
+    -> a block of code which can be used multiple times by just calling its name, without actually writing it again and again 
+    -> function in js are objects
+There are some times of functions in js:
+    -> generic function:
+        => will be created as normal 
+            function funName(){
+
+            }
+    
+    -> arrow function:
+        => which is shorter and efficient way to create function
+            let funName=()=>{
+
+            }
+
+Array built-in methods:
+    -> filter()
+        => loops through every element and keeps only the elements that pass the condition.
+        => returns a new array with the filtered elements original array is not changed
+
+    -> map()
+        => loops through every element and transforms each element
+        => returns a new array with the transformed elements original array is not changed
+
+    -> forEach()
+        => loops through every element and executes a function for each one returns nothing
+        => it's just for looping used when you just want to do something with each element without creating a new array
+
+    -> reduce()
+        => its a built in method which will traverse through array and do the operation we give and returns a single accumulated value
+    
+    -> push()
+        => adds values at the end 
+    -> pop()
+        => removes value at the end
+    -> unshift()
+        => adds value at the beginning
+    -> shift()
+        => removes value at the beginning
+    -> splice()
+        => adds or removes at any position 
+
+Math buit-in methods:
+    Math.random(): 
+        -> returns a random decimal number between 0 and 1(0 inclusive, 1 exclusive)
+    Math.floor() 
+        -> rounds down to nearest whole number
+    Math.ceil() 
+        -> rounds up to nearest whole number
+    Math.round() 
+        -> rounds to nearest whole number
+
+Type Convertion/ Type Coersion:
+    -> change one datatype to another datatype
+
+    String to Boolean
+    Boolean to String
+    String to Number
+    Number to String
+    Number to Boolean
+    Boolean to Number
