@@ -7,3 +7,4 @@ num1 = num1 + num2;
 num2 = num1 - num2;
 num1 = num1 - num2;
 console.log(`After swapping:\nnum1: ${num1}\nnum2: ${num2}`);
+
