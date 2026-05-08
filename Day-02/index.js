@@ -103,3 +103,12 @@ console.log(`after arr.splice(1, 1): ${arr}`);
 console.log(arr.indexOf(50)); // returns index of first match, -1 if not found
 console.log(arr.includes(100)); // checks if value exists, returns true or false
 console.log(arr.length); // returns length of an array
+
+
+//reduce(): its a built in method which will traverse through array and do the operation we give and returns a single accumulated value
+
+const prices = [10, 20, 30, 40];
+
+let sum = prices.reduce((acc, curr) => { return acc + curr }, 0);
+
+console.log(sum); // output will be 100 as sum of all the elements inside array is 100
