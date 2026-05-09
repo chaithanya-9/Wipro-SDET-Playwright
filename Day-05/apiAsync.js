@@ -6,6 +6,7 @@ async function api1() {
     console.log(`Cat fact: ${data.fact}`);
 
 }
+api1().catch((e) => { console.log(`Error: ${e}`) });
 
 async function api2() {
     let res = await fetch("https://official-joke-api.appspot.com/random_joke");
@@ -13,6 +14,7 @@ async function api2() {
     console.log(`setup: ${data.setup}\npunchline: ${data.punchline}`);
 
 }
+api2().catch((e) => { console.log(`Error: ${e}`) });
 
 async function api3() {
     let res = await fetch("https://jsonplaceholder.typicode.com/users");
@@ -22,6 +24,7 @@ async function api3() {
         console.log(`username: ${d.username}, company name: ${d.company}`);
     })
 }
+api3().catch((e) => { console.log(`Error: ${e}`) });
 
 async function api4() {
     let res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=10");
@@ -29,6 +32,7 @@ async function api4() {
     let pokemon = data.results.map((d) => { return { name: d.name.toUpperCase(), url: d.url } });
     pokemon.forEach((d) => { console.log(`name: ${d.name}, url: ${d.url}`) });
 }
+api4().catch((e) => { console.log(`Error: ${e}`) });
 
 async function api5() {
     let res = await fetch("https://api.jikan.moe/v4/top/anime");
@@ -40,6 +44,7 @@ async function api5() {
         console.log(`rank: ${d.rank}, title: ${d.title}, score: ${d.score}`);
     })
 }
+api5().catch((e) => { console.log(`Error: ${e}`) });
 
 
 async function api6() {
@@ -50,6 +55,7 @@ async function api6() {
         console.log(`name: ${d.name}, population: ${d.population}`);
     })
 }
+api6().catch((e) => { console.log(`Error: ${e}`) });
 
 async function api7() {
     let res = await fetch("https://jsonplaceholder.typicode.com/photos");
@@ -57,6 +63,7 @@ async function api7() {
     let photos = data.filter((d) => { return d.albumId === 1 }).map((d) => { return { title: d.title, url: d.url } });
     console.log(photos);
 }
+api7().catch((e) => { console.log(`Error: ${e}`) });
 
 async function api8() {
     let res = await fetch("https://dog.ceo/api/breeds/list/all");
@@ -64,6 +71,7 @@ async function api8() {
     let breeds = Object.keys(data.message).map((d) => { return d.toUpperCase() });
     console.log(breeds);
 }
+api8().catch((e) => { console.log(`Error: ${e}`) });
 
 async function api9() {
     let res = await fetch("http://universities.hipolabs.com/search?country=India");
@@ -71,13 +79,4 @@ async function api9() {
     let universities = data.map((d) => { return { name: d.name, website: d.web_pages[0] } });
     console.log(universities);
 }
-
-api1();
-api2();
-api3();
-api4();
-api5();
-api6();
-api7();
-api8();
-api9();
+api9().catch((e) => { console.log(`Error: ${e}`) });
