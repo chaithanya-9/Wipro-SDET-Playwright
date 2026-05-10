@@ -1,0 +1,16 @@
+Doubts session:
+
+Hoisting:
+    -> it is a js behaviour that moves declaration part to top of its scope before initialising.
+var:
+    -> var is hoisted to top and assigned with undefined.
+    -> when we try to access it will give undefined without error
+let/const:
+    -> let/const is hoisted but not assigned.
+    -> it will be in temporary dead zone which zone is not accessed before its initialisation
+    -> so when we access it will throw error
+
+function:
+    -> function is hoisted with its full body and can be accessed form anywhere 
+    -> but arrow functions behave different when we store them in variable and acts like that variable Hoisting rules 
+    
