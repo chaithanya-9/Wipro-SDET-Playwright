@@ -76,7 +76,6 @@ const numbers: GenericInterface<number> = {
 console.log(`fruits: ${fruits.content}\nnumbers: ${numbers.content}`);
 
 // generic class
-
 class Storage<T> {
     private items: T[] = [];
 
