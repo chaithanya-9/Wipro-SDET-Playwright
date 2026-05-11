@@ -1,0 +1,63 @@
+Default Parameter:
+    -> default parameter is used in functions when there is no argument given when calling that function
+    -> instead of just giving parameter we assign a value to it while creating function
+
+Rest operator:
+    -> it is used to combine multiple arguments into an array
+
+Destructuring: 
+    -> instead of assigning each value to the variable we can assign directly 
+    ex:
+        => const User={name:"abc"};
+        => instead of "const name=User.name" this we can do const {name}=User 
+    -> position based destructuring is used for arrays 
+    -> key based destructuring is used for objects
+
+Axios:
+    -> it is a library which is used to get API's data 
+    -> we use axios instead of built-in fetch method because it makes fetching API data easy
+    -> axios automatically converts to JSON unlike fetch() built-in method which uses .json() method
+
+Fetch API's data and render it on web page:
+    async function(){
+        const response=await axios.get(url);
+        const data=response.data;
+    }
+
+Typescript:
+    -> it is same like javascript but we can give types to varibales so it gives errors if types mismatch 
+    -> varibale can be single type like let variable:string; or let variable=string|number.
+
+Interface:
+    -> it defines a structure for objects which be that interface type and those objects must follow the interface structure 
+    -> if User interface has name:string and id:number then obj:User must have name with string type and id with number type
+
+Tuple:
+    -> it is an array with fixed size
+    -> const tuple:[number,string]=[10,"its a tuple"]
+
+Generics:
+    -> it is used to execute any type
+In Functions:
+    -> function genericFunction <T>(arg:T):T{return arg};
+    -> this function can be number,string or any other type, we should mention that type while calling that function
+    -> genericFunction<number>(10)
+
+In Interface:
+    -> same like functions
+    -> interface GenericInterface<T>{name:T};
+
+Generic with constraints:
+    -> it validates that the given inputs having properties of interface
+    -> uses extends keyword
+    ex:
+        interface Example{
+            isnumber:number
+        }
+        function fun<T extends Example>(arg:T):void{
+            console.log(arg.isnumber);
+        }
+        fun({ isnumber: 10 }); // no error
+        fun({isnumber:100, name:"abcd"}); // no error
+        fun({name:"abcdde"}); // error because that argument does not has isnumber property
+    -> it works with any object that has the isnumber property
