@@ -47,6 +47,6 @@ const [firstIndex, secondIndex, thirdIndex] = [100, 200, 300];
 console.log(`first:${firstIndex}\nsecond: ${secondIndex}\nthird:${thirdIndex}`);
 
 // for objects
-// key based extracted
+// key based extraction
 const { name, age } = { name: "aryan", age: 25 };
-console.log(name, age);
+console.log(`name: ${name}\nage: ${age}`);
