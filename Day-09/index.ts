@@ -94,3 +94,16 @@ names.addItems("abc");
 names.addItems("def");
 
 console.log(`items[0]: ${names.getItem(0)}\nitems[1]: ${names.getItem(1)}\nitems[2]:${names.getItem(2)}`);
+
+//generics with constraints (extends keyword)
+interface HasLength {
+    length: number
+}
+
+function getLength<T extends HasLength>(arg: T): void {
+    console.log(arg.length);
+}
+
+getLength("abcdefghi"); // output will be 9
+getLength([1, 2, 3, 4, 5]); // output will be 5
+// getLength(12345); // error because number does not have length
