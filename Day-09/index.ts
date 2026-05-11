@@ -107,3 +107,4 @@ function getLength<T extends HasLength>(arg: T): void {
 getLength("abcdefghi"); // output will be 9
 getLength([1, 2, 3, 4, 5]); // output will be 5
 // getLength(12345); // error because number does not have length
+// T extends HasId so object extends interface via generics so now the argument which is object should definetly contain HasId's propersties wihtout that it will throw error
