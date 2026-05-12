@@ -1,0 +1,26 @@
+enum:
+    -> it is a set of values 
+type:
+    -> keyword is used to define a structure and is used by anything to define its type
+typeof:
+    -> it converts objects into types 
+keyof:
+    -> it converts types into keys and gives as union
+
+Utility types:
+    -> Partial:
+        => it is used to make properties as optional and doesnt including nested properties
+    -> Omit
+        => it is used to remove properties from object
+    -> DeepPartial
+        => it is used to make everything optional including nested properties
+    
+as const:
+    -> it is used direclty on the object to make whole object as readonly like it cannot be updated
+
+Readonly:
+    -> it is used as a type notation for whole objects or individual properties
+    ex: Readonly<T>
+ReadonlyArray:
+    -> used to make the array as read only, cannot add or remove anything
+    ex: ReadonlyArray<T>
