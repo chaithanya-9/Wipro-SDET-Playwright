@@ -1,0 +1,3 @@
+-> created a login page with username, password and login button as a form 
+-> by using express created a local server and gets user login credentials after login
+-> tests that login page using different testcases which included valid and invalid credentials whether its working as expected or not
