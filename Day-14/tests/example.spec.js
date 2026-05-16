@@ -1,19 +1,42 @@
 // @ts-check
 import { test, expect } from '@playwright/test';
+import path from 'path';
 
-test('has title', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+const loginData = [
+    {
+        username: "tom",
+        password: "tom",
+        expected: "Username length must be greater than 3 & Password 5"
+    }, {
+        username: "tom123",
+        password: "tom",
+        expected: "Username length must be greater than 3 & Password 5"
+    }, {
+        username: "admin123",
+        password: "admin123",
+        expected: "Login successful"
+    }, {
+        username: "admin123",
+        password: "admin12345",
+        expected: "Invalid credentials"
+    }
+]
+loginData.forEach(async data => {
+    test(`Checking Login form with ${data.username}, ${data.password}`, async ({ page }) => {
+        await page.goto('http://localhost:3000/login');
 
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Playwright/);
-});
+        const username = page.locator("#username");
+        const password = page.locator("#password");
+        const btn = page.locator("#loginBtn");
+        const msg = page.locator("#msg");
 
-test('get started link', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+        await username.fill(data.username);
+        await password.fill(data.password);
+        await btn.click();
 
-  // Click the get started link.
-  await page.getByRole('link', { name: 'Get started' }).click();
+        // await btn.screenshot({ type: 'png', path: 'btn.png'  });
+        // await page.screenshot({ fullPage: true, path: 'full-page.png' })
 
-  // Expects page to have a heading with the name of Installation.
-  await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
-});
+        await expect(msg).toHaveText(data.expected);
+    });
+})
