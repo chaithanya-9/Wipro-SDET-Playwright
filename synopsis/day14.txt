@@ -1,0 +1,4 @@
+-> revisited yesterday's code and learned how to take screenshots of the testing only when it fails , page.screenshot({fullpage:true,path:''})
+-> integrated running webserver from playwright.config.js implicitly without actually running explicitly everytime.
+-> now whenever we run test automatically webserver will also run
+-> practiced some tests on my own for some practice websites online
