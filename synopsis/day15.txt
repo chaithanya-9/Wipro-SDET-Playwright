@@ -1,0 +1,10 @@
+Different ways to execute in playwright:
+    -> npx playwright test filenmae.spec.js --ui
+        => this opens playwright window where we can execute different test cases and see in live how the code is executing step by step 
+    
+    -> npx playwright codegen "url"
+        => this opens url where we can navigate in and playwright window where it automatically codes based on our navigation in url link 
+        => it will auto fetch all the locators and uses those to generate test cases
+    
+    -> npx playwright test filename.spec.js --debug
+        => it opens same windows as codegen but its main purpose is to run the code line by line and check how its navigating 
