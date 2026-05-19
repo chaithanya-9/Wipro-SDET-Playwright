@@ -1,0 +1,14 @@
+test.describe()
+    -> it groups all the tests
+
+Hooks:
+    test.beforeAll()
+        -> it executes once before all the tests in its block
+    test.beforeEach()
+        -> it executes once before each test in its block
+    test.afterAll()
+        -> it executes once after all the tests in its block
+    test.afterEach()
+        -> it executes once after each test in its block
+
+ 
