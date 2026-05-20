@@ -1,0 +1,16 @@
+Authenticaiton state management
+    -> Authentication state management in Playwright by logging into a website once and saving the session data into a JSON file  
+       and reusing that saved login state in another test to access pages without logging in again
+    -> This save time and memory
+
+Parameterized Testing
+    -> Running tests using multiple datasets
+
+Soft Assertions
+    -> it continues execution after failure so it will not stop execution of later tests
+
+Polling Assertions
+    -> repeated checking until condition is true or timeout
+
+
+
