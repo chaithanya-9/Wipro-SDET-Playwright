@@ -1,19 +1,25 @@
-// @ts-check
-import { test, expect } from '@playwright/test';
+const { test: base, expect } = require('@playwright/test');
 
-test('has title', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+const test = base.extend({
+    preparedPage: async ({ page }, use) => {
+        await page.goto('http://localhost:3000');
 
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Playwright/);
+        // imagine closing some ads...
+        await use(page);
+    }
 });
 
-test('get started link', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+// goto -> page [ads popup, promotion banner, forms popup] --> close them --> execute test cases
 
-  // Click the get started link.
-  await page.getByRole('link', { name: 'Get started' }).click();
+test.describe.configure({ mode: 'parallel' })
 
-  // Expects page to have a heading with the name of Installation.
-  await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
-});
+test.describe('Parallel fixtures execution', () => {
+    test.skip('Test 1 running in parallel', async ({ preparedPage }) => {
+        // preparedPage already went to the URL because of our fixture!
+        await expect(preparedPage.getByText('Get started')).toBeVisible();
+    });
+    test.skip('Test 2 running in parallel', async ({ preparedPage }) => {
+        await preparedPage.getByRole('link', { name: 'Get started' }).click();
+        await expect(preparedPage.getByRole('heading', { name: 'Installation' })).toBeVisible();
+    });
+})
