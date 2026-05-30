@@ -1,0 +1,3 @@
+-> fixtures
+-> parallels
+-> POM (Page Object Model)
