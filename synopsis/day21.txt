@@ -1,0 +1,3 @@
+-> learn how to set CI/CD
+-> understand .yml file code
+-> access allure report directly from github using github pages
